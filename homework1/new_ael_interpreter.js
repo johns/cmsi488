@@ -1,3 +1,9 @@
+// An interpreter for Ael.
+//
+// Example usage:
+//
+//   $ node ael.js '8 + (7 / 2)'
+//   11.5
 
 const ohm = require('ohm-js');
 
