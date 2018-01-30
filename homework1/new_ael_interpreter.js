@@ -7,8 +7,8 @@ const aelGrammar = ohm.grammar(`Ael {
           | Term
   Term    = Term "*" Factor  --times
           | Term "/" Factor  --divide
-          | Factor
           | Term "^" Factor  --exponentiation
+          | Factor
   Factor  = "-" Primary      --negate
           | Primary
   Primary = "(" Exp ")"      --parens
