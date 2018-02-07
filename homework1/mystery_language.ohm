@@ -1,0 +1,12 @@
+Mystery_Language {
+  Program     =   Stmt+
+  Stmt        =   Call ";"
+              |   FuncDef
+              |   Exp ";"
+  FuncDef     =   "func" id "(" Params ")" Body
+  Body        =   "{" Stmt* "}"
+  Params      =   id ("," id)*                    -- Fix to take in 0 arguments
+  Call        =   id "(" Args ")"
+  Args        =   ListOf<Exp, ",">
+
+}
