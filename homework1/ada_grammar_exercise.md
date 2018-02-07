@@ -8,7 +8,7 @@ c. What are the associativities of the additive operators? The relational operat
 > hi
 
 d. Is the `not` operator right associative? Why or why not?
-> hi
+> The `not` operator is right associative because the expression `"not" Exp5` groups the subsequent operations from the right.
 
 e. Why do you think the negation operator was given a lower precedence than multiplication?
 > hi
