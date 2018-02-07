@@ -14,7 +14,7 @@ e. Why do you think the negation operator was given a lower precedence than mult
 > hi
 
 f. Give an abstract syntax tree for the expression `-8 * 5`.
-> hi
+> {Negate {Times {Numlit 8}{Numlit 5}}}
 
 g. Suppose the grammar were changed by dropping the negation from Exp2 and adding `- Exp5` to Exp4. Give the abstract syntax tree for the expression `-8 * 5` according to the new grammar.
-> hi
+> {Times {Negate {Numlit 8}}{Numlit 5}}
