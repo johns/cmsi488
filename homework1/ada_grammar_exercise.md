@@ -5,13 +5,13 @@ b. If possible, give an AST for the expression `X and Y or Z`. (Assume, of cours
 > {Or{And{TermX}{TermY}}{TermZ}}
 
 c. What are the associativities of the additive operators? The relational operators?
-> hi
+> Both are right associative.
 
 d. Is the `not` operator right associative? Why or why not?
 > The `not` operator is right associative because the expression `"not" Exp5` groups the subsequent operations from the right.
 
 e. Why do you think the negation operator was given a lower precedence than multiplication?
-> hi
+> To carry out multiplication operations first, then negate the entire product
 
 f. Give an abstract syntax tree for the expression `-8 * 5`.
 > {Negate {Times {Numlit 8}{Numlit 5}}}
