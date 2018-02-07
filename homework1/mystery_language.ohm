@@ -8,5 +8,9 @@ Mystery_Language {
   Params      =   id ("," id)*                    -- Fix to take in 0 arguments
   Call        =   id "(" Args ")"
   Args        =   ListOf<Exp, ",">
+  
+  id          =  ~keyword letter idrest*
+  addop       =   "+" | "-"
+  mulop       =  "*" | "/" | "%"
 
 }
