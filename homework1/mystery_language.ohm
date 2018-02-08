@@ -3,27 +3,35 @@ Mystery_Language {
   Stmt        =   Call ";"
               |   FuncDef
               |   Exp ";"
-              |   Suite "if" Exp (else Suite)?
+              |   Cond
 
-
-  SimpleStmt  =  "let" Ids "=" Exps               -- vardecl
-              |  VarExps "=" Exps                 -- assign
-              |  Call                             -- call
-              |  "break"                          -- break
-              |  "return" Exp?                    -- return
-  Suite       =  SimpleStmt                       -- small
-              |  newline  Stmt+                   -- large
-
+  Cond        =   Exp "if" Exp "else" Exp
 
   FuncDef     =   "func" id "(" Params ")" Body
   Body        =   "{" Stmt* "}"
-  Params      =   (id ("," id)*)?
+  Params      =   id ("," id)*
+              |   ""
   Call        =   id "(" Args ")"
   Args        =   ListOf<Exp, ",">
 
-  id          =  ~keyword letter idrest*
+  Exp         =   Exp addop Exp1
+              |   Exp1
+  Exp1        =   Exp1 mulop Exp2
+              |   Exp2
+  Exp2        =   prefixop Exp3
+              |   Exp3
+  Exp3        =   Exp4 postfixop
+              |   Exp4
+  Exp4        =   numlit
+              |   strlit
+              |   Call
+              |   "(" Exp ")"
+
+  id          =   ~keyword letter idrest*
   addop       =   "+" | "-"
-  mulop       =  "*" | "/" | "%"
+  mulop       =   "*" | "/"
+  prefixop    =   "-"
+  postfixop   =   "!"
 
   space := "\t" | " " | "\n" | comment
   comment = "--" (~"\n" any)*
