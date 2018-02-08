@@ -5,9 +5,19 @@ Mystery_Language {
               |   Exp ";"
               |   Suite "if" Exp (else Suite)?
 
+
+  SimpleStmt  =  "let" Ids "=" Exps               -- vardecl
+              |  VarExps "=" Exps                 -- assign
+              |  Call                             -- call
+              |  "break"                          -- break
+              |  "return" Exp?                    -- return
+  Suite       =  SimpleStmt                       -- small
+              |  newline  Stmt+                   -- large
+
+
   FuncDef     =   "func" id "(" Params ")" Body
   Body        =   "{" Stmt* "}"
-  Params      =   id ("," id)*                    -- Fix to take in 0 arguments
+  Params      =   (id ("," id)*)?
   Call        =   id "(" Args ")"
   Args        =   ListOf<Exp, ",">
 
@@ -15,7 +25,7 @@ Mystery_Language {
   addop       =   "+" | "-"
   mulop       =  "*" | "/" | "%"
 
-  space := "\t" | " " | "\n" | comment            -- Overrides Ohm space and adds comments
+  space := "\t" | " " | "\n" | comment
   comment = "--" (~"\n" any)*
 
 }
