@@ -7,7 +7,7 @@ Mystery_Language {
 
   Cond        =   Exp "if" Exp "else" Exp
 
-  FuncDef     =   "func" id "(" Params ")" Body
+  FuncDef     =   "fun" id "(" Params ")" Body
   Body        =   "{" Stmt* "}"
   Params      =   id ("," id)*
               |   ""
@@ -28,8 +28,9 @@ Mystery_Language {
               |   Call
               |   "(" Exp ")"
 
-  id          =   ~keyword letter idrest*
-  keyword     =  ("func" | "if" | "else") ~idrest
+  keyword     =   ("fun" | "if" | "else") ~idrest
+  id          =   ~keyword (letter | "$") idrest*
+  idrest      =   ("_" | alnum | "@" | "$")
 
   addop       =   "+" | "-"
   mulop       =   "*" | "/"
