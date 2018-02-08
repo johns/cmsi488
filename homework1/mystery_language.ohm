@@ -36,7 +36,9 @@ Mystery_Language {
   mulop       =   "*" | "/"
   prefixop    =   "-"
   postfixop   =   "!"
-  numlit      =  digit+ ("." digit+)? (("E" | "e") ("+" | "-")? digit+)?
+  numlit      =   digit+ ("." digit+)? (("E" | "e") ("+" | "-")? digit+)?
+  stringlit   =   "\"" (any | escape)* "\""
+  escape      =   "\'" |  "\"" |  "\r" |  "\n" | "\\" | "\u" hexDigit hexDigit hexDigit hexDigit
 
   space := "\t" | " " | "\n" | comment
   comment = "--" (~"\n" any)*
