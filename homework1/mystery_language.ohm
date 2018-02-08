@@ -16,6 +16,7 @@ Mystery_Language {
 
   Exp         =   Exp addop Exp1
               |   Exp1
+              |   id
   Exp1        =   Exp1 mulop Exp2
               |   Exp2
   Exp2        =   prefixop Exp3
@@ -32,6 +33,7 @@ Mystery_Language {
   mulop       =   "*" | "/"
   prefixop    =   "-"
   postfixop   =   "!"
+  numlit      =  digit+ ("." digit+)? (("E" | "e") ("+" | "-")? digit+)?
 
   space := "\t" | " " | "\n" | comment
   comment = "--" (~"\n" any)*
