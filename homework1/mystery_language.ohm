@@ -29,6 +29,8 @@ Mystery_Language {
               |   "(" Exp ")"
 
   id          =   ~keyword letter idrest*
+  keyword     =  ("func" | "if" | "else") ~idrest
+
   addop       =   "+" | "-"
   mulop       =   "*" | "/"
   prefixop    =   "-"
