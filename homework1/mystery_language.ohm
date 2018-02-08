@@ -3,6 +3,8 @@ Mystery_Language {
   Stmt        =   Call ";"
               |   FuncDef
               |   Exp ";"
+              |   Suite "if" Exp (else Suite)?
+
   FuncDef     =   "func" id "(" Params ")" Body
   Body        =   "{" Stmt* "}"
   Params      =   id ("," id)*                    -- Fix to take in 0 arguments
@@ -15,6 +17,5 @@ Mystery_Language {
 
   space := "\t" | " " | "\n" | comment            -- Overrides Ohm space and adds comments
   comment = "--" (~"\n" any)*
-
 
 }
