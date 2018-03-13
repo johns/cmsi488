@@ -98,10 +98,18 @@ describe('Regex tests', () => {
 
   test('isLatinNotThreeEndingInOO', () => {
     const good = [
-      ""
+      "a",
+      "ab",
+      "abc",
+      "abcdef",
+      "aop",
+      "apo"
     ];
     const bad = [
-      ""
+      "aOO",
+      "aOo",
+      "aoo",
+      "aoO"
     ];
     good.forEach(s => {
       expect(isLatinNotThreeEndingInOO.match(s).succeeded()).toBeTruthy();

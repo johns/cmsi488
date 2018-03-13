@@ -66,8 +66,8 @@ const isLatinNotForFileFindNoLookAround = ohm.grammar(`I {
 }`);
 
 const isLatinNotForFileFindWithLookAround = ohm.grammar(`J {
-  string = ~reject accept
-  accept = letter*
+  string = ~reject accept*
+  accept = letter
   reject = ("for" | "find" | "file") ~accept
 }`);
 
