@@ -1,5 +1,5 @@
 function isCanadianPostalCode(s) {
-  return /^[^DFIOQUWZ(0-9)]\d([^DFIOQU(0-9)] \d[^DFIOQU(0-9)]\d){2}/.test(s);
+  return /^[^DFIOQUWZ0-9]\d([^DFIOQU0-9] \d[^DFIOQU0-9]\d)/.test(s);
 }
 
 function isLegalVisa(s) {

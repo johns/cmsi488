@@ -18,12 +18,14 @@ describe('Regex tests', () => {
 
   test('isCanadianPostalCode', () => {
     const good = [
-      "A1A 1A1",
-      "B2B 2B2"
+      'A7X 2P8',
+      'P8E 4R2'
     ];
     const bad = [
-      "foo",
-      "bar"
+      'A7X   9B2',
+      'C7E9U2',
+      '',
+      'Dog'
     ];
     good.forEach(s => {
       expect(isCanadianPostalCode.match(s).succeeded()).toBeTruthy();
