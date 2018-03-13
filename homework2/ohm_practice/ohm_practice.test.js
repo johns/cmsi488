@@ -149,7 +149,7 @@ describe('Ohm tests', () => {
     ];
     const bad = [
       "1",
-      "33",
+      "39",
       "foooo"
     ];
     good.forEach(s => {
