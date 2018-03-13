@@ -11,6 +11,9 @@ const {
   isLatinNotForFileFindWithLookAround
 } = require('./regex_practice.js');
 
+const fs = require('fs');
+const ohm = require('ohm-js');
+
 describe('Regex tests', () => {
 
   test('isCanadianPostalCode', () => {
