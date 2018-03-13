@@ -11,11 +11,11 @@ function isLegalMasterCard(s) {
 }
 
 function isAda95(s) {
-  return /`^\d (_?\d)*
+  return new RegExp(String.raw`^\d (_?\d)*
   (
     \. \d (_?\d)* | [\da-f](_?[\da-f])* (\. [\da-f](_?[\da-f])*)?
   )?
-  (e [+-]? \d(_?\d)*)?$`/.test(s);
+  (e [+-]? \d(_?\d)*)?$`.replace(/\s+/g, ''), 'i').test(s);
 }
 
 function isLatinNotThreeEndingInOO(s) {
@@ -35,7 +35,17 @@ function isMLComment(s) {
 }
 
 function isLatinNotForFileFindNoLookAround(s) {
-  return /^$/.test(s);
+  return new RegExp(`^(
+    [a-eg-zA-Z][a-zA-Z]*
+    | f([a-hj-np-z][a-zA-Z]*)?
+    | fi([a-k-mo-zA-Z][a-zA-Z]*)?
+    | fil([a-df-zA-Z][a-zA-Z]*)?
+    | file[a-zA-Z]+
+    | fin([a-ce-zA-Z][a-zA-Z]*)?
+    | find[a-zA-Z]+
+    | fo([a-qs-zA-Z][a-zA-Z]*)?
+    | for[a-zA-Z]+
+  )?$`.replace(/\s+g\, ''));
 }
 
 function isLatinNotForFileFindWithLookAround(s) {
