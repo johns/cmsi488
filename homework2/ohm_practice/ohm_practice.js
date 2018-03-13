@@ -44,7 +44,8 @@ const isDecimal2Through36 = ohm.grammar(`G {
 }`);
 
 const isMLComment = ohm.grammar(`H {
-
+  comment = "(*" contentParam "*)"
+  contentParam = ( ~"*)" ~"(*" any )*
 }`);
 
 const isLatinNotForFileFindNoLookAround = ohm.grammar(`I {
