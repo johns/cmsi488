@@ -120,10 +120,14 @@ describe('Regex tests', () => {
 
   test('isBinaryDivisibleBy32', () => {
     const good = [
-      ""
+      '000000',
+      '0000000',
+      '110100000'
     ];
     const bad = [
-      ""
+      '1',
+      '1010woof001',
+      '00000000001'
     ];
     good.forEach(s => {
       expect(isBinaryDivisibleBy32.match(s).succeeded()).toBeTruthy();
@@ -135,10 +139,15 @@ describe('Regex tests', () => {
 
   test('isDecimal2Through36', () => {
     const good = [
-      ""
+      "2",
+      "10",
+      "30"
+
     ];
     const bad = [
-      ""
+      "1",
+      "33",
+      "foooo"
     ];
     good.forEach(s => {
       expect(isDecimal2Through36.match(s).succeeded()).toBeTruthy();
