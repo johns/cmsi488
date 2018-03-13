@@ -32,4 +32,73 @@ describe('Regex tests', () => {
       expect(isCanadianPostalCode.match(s).succeeded()).toBeFalsy();
     });
   });
+
+  test('isLatinNotThreeEndingInOO', () => {
+    const good = [
+      "a",
+      "ab",
+      "abc",
+      "abcdef",
+      "aop",
+      "apo"
+    ];
+    const bad = [
+      "aOO",
+      "aOo",
+      "aoo",
+      "aoO"
+    ];
+    good.forEach(s => {
+      expect(isLatinNotThreeEndingInOO.match(s).succeeded()).toBeTruthy();
+    });
+    bad.forEach(s => {
+      expect(isLatinNotThreeEndingInOO.match(s).succeeded()).toBeFalsy();
+    });
+  });
+
+  test('isLatinNotForFileFindNoLookAround', () => {
+    const good = [
+      "f",
+      "fi",
+      "fo",
+      "fin",
+      "fil",
+      "forabcd",
+      "abcdfor"
+    ];
+    const bad = [
+      "for",
+      "file",
+      "find"
+    ];
+    good.forEach(s => {
+      expect(isLatinNotForFileFindNoLookAround.match(s).succeeded()).toBeTruthy();
+    });
+    bad.forEach(s => {
+      expect(isLatinNotForFileFindNoLookAround.match(s).succeeded()).toBeFalsy();
+    });
+  });
+
+  test('isLatinNotForFileFindWithLookAround', () => {
+    const good = [
+      "f",
+      "fi",
+      "fo",
+      "fin",
+      "fil",
+      "forabcd",
+      "abcdfor"
+    ];
+    const bad = [
+      "for",
+      "file",
+      "find"
+    ];
+    good.forEach(s => {
+      expect(isLatinNotForFileFindWithLookAround.match(s).succeeded()).toBeTruthy();
+    });
+    bad.forEach(s => {
+      expect(isLatinNotForFileFindWithLookAround.match(s).succeeded()).toBeFalsy();
+    });
+  });
 });

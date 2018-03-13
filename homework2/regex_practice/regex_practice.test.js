@@ -16,6 +16,7 @@ const ohm = require('ohm-js');
 
 describe('Regex tests', () => {
 
+  /*
   test('isCanadianPostalCode', () => {
     const good = [
       "A1A 1A1",
@@ -34,6 +35,7 @@ describe('Regex tests', () => {
       expect(isCanadianPostalCode.match(s).succeeded()).toBeFalsy();
     });
   });
+
 
   test('isLegalVisa', () => {
     const good = [
@@ -82,10 +84,18 @@ describe('Regex tests', () => {
 
   test('isLatinNotThreeEndingInOO', () => {
     const good = [
-      ""
+      "a",
+      "ab",
+      "abc",
+      "abcdef",
+      "aop",
+      "apo"
     ];
     const bad = [
-      ""
+      "aOO",
+      "aOo",
+      "aoo",
+      "aoO"
     ];
     good.forEach(s => {
       expect(isLatinNotThreeEndingInOO.match(s).succeeded()).toBeTruthy();
@@ -94,6 +104,7 @@ describe('Regex tests', () => {
       expect(isLatinNotThreeEndingInOO.match(s).succeeded()).toBeFalsy();
     });
   });
+
 
   test('isBinaryDivisibleBy32', () => {
     const good = [
@@ -168,6 +179,6 @@ describe('Regex tests', () => {
     bad.forEach(s => {
       expect(isLatinNotForFileFindWithLookAround.match(s).succeeded()).toBeFalsy();
     });
-  });
+  });*/
 
 });
