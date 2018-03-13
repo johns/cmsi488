@@ -30,11 +30,17 @@ const isLatinNotThreeEndingInOO = ohm.grammar(`E {
 }`);
 
 const isBinaryDivisibleBy32 = ohm.grammar(`F {
-
+  binary = "0" binary		--zero
+    			| "1" binary	--one
+          | "00000"		  --end
 }`);
 
 const isDecimal2Through36 = ohm.grammar(`G {
-
+  firstDigit = "1" digit      --tens
+              | "2" digit     --twenties
+              | "3" sixBound	--thirties
+              | "2".."9"      --ones
+    sixBound = "0".."6"
 }`);
 
 const isMLComment = ohm.grammar(`H {
