@@ -18,8 +18,9 @@ describe('Regex tests', () => {
 
   test('isCanadianPostalCode', () => {
     const good = [
-      'A7X 2P8',
-      'P8E 4R2'
+      "A1A 1A1",
+      "J7V 1J9",
+      "H3E 1B5"
     ];
     const bad = [
       "D6H 8J0",
@@ -148,7 +149,7 @@ describe('Regex tests', () => {
     ];
     const bad = [
       "1",
-      "33",
+      "39",
       "foooo"
     ];
     good.forEach(s => {
