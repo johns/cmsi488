@@ -41,3 +41,16 @@ function isLatinNotForFileFindNoLookAround(s) {
 function isLatinNotForFileFindWithLookAround(s) {
   return /^(?!file$|find$|for$)[A-Za-z]*$/.test(s);
 }
+
+module.exports = {
+  isCanadianPostalCode,
+  isLegalVisa,
+  isLegalMasterCard,
+  isAda95,
+  isLatinNotThreeEndingInOO,
+  isBinaryDivisibleBy32,
+  isDecimal2Through36,
+  isMLComment,
+  isLatinNotForFileFindNoLookAround,
+  isLatinNotForFileFindWithLookAround
+}
