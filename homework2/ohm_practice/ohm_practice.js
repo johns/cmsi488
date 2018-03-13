@@ -19,7 +19,7 @@ const isAda95 = ohm.grammar(`D {
     float = digits (decimal | based)? exp?
     decimal = "." digits
     digits = digit ("_"? digit)*
-    based = hexDigits ("." hexDigits)?
+    based = "#" hexDigits ("." hexDigits)? "#"
     hexDigits = hexDigit ("_"? hexDigit)*
     exp = ("E" | "e") ("+" | "-")? digits
   }`);

@@ -13,7 +13,7 @@ function isLegalMasterCard(s) {
 function isAda95(s) {
   return new RegExp(String.raw`^\d (_?\d)*
   (
-    \. \d (_?\d)* | [\da-f](_?[\da-f])* (\. [\da-f](_?[\da-f])*)?
+    \. \d (_?\d)* | # [\da-f](_?[\da-f])* (\. [\da-f](_?[\da-f])*)? #
   )?
   (e [+-]? \d(_?\d)*)?$`.replace(/\s+/g, ''), 'i').test(s);
 }
