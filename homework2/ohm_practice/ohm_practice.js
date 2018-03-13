@@ -1,7 +1,8 @@
 const ohm = require('ohm-js');
 
 const isCanadianPostalCode = ohm.grammar(`A {
-  code = "A".."Z" digit "A".."Z" " " digit "A".."Z" digit
+  // DFIOUQWZ
+  code = ("A".."C" | "E" | "G".."H" | "J".."N" | "P" | "R".."T" | "V" | "X".."Y") digit ("A".."C" | "E" | "G".."H" | "J".."N" | "P" | "R".."T" | "V".."Z") " " digit ("A".."C" | "E" | "G".."H" | "J".."N" | "P" | "R".."T" | "V".."Z") digit
 }`);
 
 const isLegalVisa = ohm.grammar(`B {
