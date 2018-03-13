@@ -166,10 +166,18 @@ describe('Regex tests', () => {
 
   test('isLatinNotForFileFindNoLookAround', () => {
     const good = [
-      ""
+      "f",
+      "fi",
+      "fo",
+      "fin",
+      "fil",
+      "forabcd",
+      "abcdfor"
     ];
     const bad = [
-      ""
+      "for",
+      "file",
+      "find"
     ];
     good.forEach(s => {
       expect(isLatinNotForFileFindNoLookAround.match(s).succeeded()).toBeTruthy();
@@ -181,10 +189,18 @@ describe('Regex tests', () => {
 
   test('isLatinNotForFileFindWithLookAround', () => {
     const good = [
-      ""
+      "f",
+      "fi",
+      "fo",
+      "fin",
+      "fil",
+      "forabcd",
+      "abcdfor"
     ];
     const bad = [
-      ""
+      "for",
+      "file",
+      "find"
     ];
     good.forEach(s => {
       expect(isLatinNotForFileFindWithLookAround.match(s).succeeded()).toBeTruthy();
