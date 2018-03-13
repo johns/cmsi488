@@ -11,7 +11,11 @@ function isLegalMasterCard(s) {
 }
 
 function isAda95(s) {
-  return /^$/.test(s);
+  return /`^\d (_?\d)*
+  (
+    \. \d (_?\d)* | [\da-f](_?[\da-f])* (\. [\da-f](_?[\da-f])*)?
+  )?
+  (e [+-]? \d(_?\d)*)?$`/.test(s);
 }
 
 function isLatinNotThreeEndingInOO(s) {
