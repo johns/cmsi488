@@ -49,11 +49,21 @@ const isMLComment = ohm.grammar(`H {
 }`);
 
 const isLatinNotForFileFindNoLookAround = ohm.grammar(`I {
+  string = exp1 | exp2 | exp3
 
+  exp1 = "find" letter+ | "for" letter+ | "file" letter+
+  exp2 = ("a".."e"|"g".."z"|"A".."Z") letter*
+  exp3 = "fin" (("a".."c"|"e".."z"|"A".."Z") letter*)?
+  		  | "fil" (("a".."d"|"f".."z"|"A".."Z") letter*)?
+		    | "fi" (("a".."m"|"o".."z"|"A".."Z") letter*)?
+        | "fo" (("a".."q"|"s".."z"|"A".."Z") letter*)?
+        | "f" (("a".."n"|"p".."z"|"A".."Z") letter*)?
 }`);
 
 const isLatinNotForFileFindWithLookAround = ohm.grammar(`J {
-
+  string = ~reject accept
+  accept = letter*
+  reject = ("for" | "find" | "file") ~accept
 }`);
 
 module.exports = {
