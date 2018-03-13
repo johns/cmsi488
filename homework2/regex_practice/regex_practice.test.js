@@ -16,17 +16,17 @@ const ohm = require('ohm-js');
 
 describe('Regex tests', () => {
 
-  /*
   test('isCanadianPostalCode', () => {
     const good = [
       'A7X 2P8',
       'P8E 4R2'
     ];
     const bad = [
-      'A7X   9B2',
-      'C7E9U2',
-      '',
-      'Dog'
+      "D6H 8J0",
+      "F78 41H",
+      "A1A1A1",
+      "J7V      1J9",
+      ""
     ];
     good.forEach(s => {
       expect(isCanadianPostalCode.match(s).succeeded()).toBeTruthy();
@@ -36,13 +36,18 @@ describe('Regex tests', () => {
     });
   });
 
-
   test('isLegalVisa', () => {
     const good = [
-      ""
+      "4178459843150734",
+      "4094358498345",
+      "4895467892178494"
     ];
     const bad = [
-      ""
+      "4988932",
+      "9934687346897233",
+      "bagel",
+      "487583487534855"
+
     ];
     good.forEach(s => {
       expect(isLegalVisa.match(s).succeeded()).toBeTruthy();
@@ -54,10 +59,16 @@ describe('Regex tests', () => {
 
   test('isLegalMasterCard', () => {
     const good = [
-      ""
+      "5394137483948295",
+      "5227458934587632",
+      "5543958719347834"
     ];
     const bad = [
-      ""
+      "5727458934587632",
+      "5923894",
+      "muffin",
+      "3257485768754674"
+
     ];
     good.forEach(s => {
       expect(isLegalMasterCard.match(s).succeeded()).toBeTruthy();
@@ -69,7 +80,9 @@ describe('Regex tests', () => {
 
   test('isAda95', () => {
     const good = [
-      ""
+      "9",
+      "1.1e7",
+      "14#eD52_4_9#"
     ];
     const bad = [
       ""
@@ -104,7 +117,6 @@ describe('Regex tests', () => {
       expect(isLatinNotThreeEndingInOO.match(s).succeeded()).toBeFalsy();
     });
   });
-
 
   test('isBinaryDivisibleBy32', () => {
     const good = [
@@ -153,10 +165,18 @@ describe('Regex tests', () => {
 
   test('isLatinNotForFileFindNoLookAround', () => {
     const good = [
-      ""
+      "f",
+      "fi",
+      "fo",
+      "fin",
+      "fil",
+      "forabcd",
+      "abcdfor"
     ];
     const bad = [
-      ""
+      "for",
+      "file",
+      "find"
     ];
     good.forEach(s => {
       expect(isLatinNotForFileFindNoLookAround.match(s).succeeded()).toBeTruthy();
@@ -168,10 +188,18 @@ describe('Regex tests', () => {
 
   test('isLatinNotForFileFindWithLookAround', () => {
     const good = [
-      ""
+      "f",
+      "fi",
+      "fo",
+      "fin",
+      "fil",
+      "forabcd",
+      "abcdfor"
     ];
     const bad = [
-      ""
+      "for",
+      "file",
+      "find"
     ];
     good.forEach(s => {
       expect(isLatinNotForFileFindWithLookAround.match(s).succeeded()).toBeTruthy();
@@ -179,6 +207,6 @@ describe('Regex tests', () => {
     bad.forEach(s => {
       expect(isLatinNotForFileFindWithLookAround.match(s).succeeded()).toBeFalsy();
     });
-  });*/
+  });
 
 });
