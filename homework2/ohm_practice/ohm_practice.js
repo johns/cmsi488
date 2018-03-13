@@ -10,7 +10,8 @@ const isLegalVisa = ohm.grammar(`B {
 }`);
 
 const isLegalMasterCard = ohm.grammar(`C {
-
+  card = "5" ("1".."5") d d d d d d d d d d d d d d
+  d = digit
 }`);
 
 const isAda95 = ohm.grammar(`D {
@@ -18,7 +19,14 @@ const isAda95 = ohm.grammar(`D {
 }`);
 
 const isLatinNotThreeEndingInOO = ohm.grammar(`E {
-
+  latin = exp3 | exp2 | exp1 | exp
+  exp = letter
+  exp1 = letter letter
+  exp2 = letter validEnding
+  exp3 = letter letter letter letter+
+  validEnding = ("a".."n" | "p".."z" | "A".."N" | "P".."Z") ("a".."n" | "p".."z" | "A".."N" | "P".."Z") |
+                letter ("a".."n" | "p".."z" | "A".."N" | "P".."Z") |
+                ("a".."n" | "p".."z" | "A".."N" | "P".."Z") letter
 }`);
 
 const isBinaryDivisibleBy32 = ohm.grammar(`F {
