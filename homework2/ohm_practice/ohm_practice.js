@@ -15,8 +15,13 @@ const isLegalMasterCard = ohm.grammar(`C {
 }`);
 
 const isAda95 = ohm.grammar(`D {
-
-}`);
+    float = digits (decimal | based)? exp?
+    decimal = "." digits
+    digits = digit ("_"? digit)*
+    based = hexDigits ("." hexDigits)?
+    hexDigits = hexDigit ("_"? hexDigit)*
+    exp = ("E" | "e") ("+" | "-")? digits
+  }`);
 
 const isLatinNotThreeEndingInOO = ohm.grammar(`E {
   latin = exp3 | exp2 | exp1 | exp
