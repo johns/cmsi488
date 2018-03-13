@@ -85,7 +85,10 @@ describe('Regex tests', () => {
       "14#eD52_4_9#"
     ];
     const bad = [
-      ""
+      "dot",
+      "4ff",
+      "_55",
+      "1_"
     ];
     good.forEach(s => {
       expect(isAda95.match(s).succeeded()).toBeTruthy();
@@ -142,7 +145,6 @@ describe('Regex tests', () => {
       "2",
       "10",
       "30"
-
     ];
     const bad = [
       "1",
@@ -159,9 +161,14 @@ describe('Regex tests', () => {
 
   test('isMLComment', () => {
     const good = [
-      ""
+      "(**)",
+      "(* *)",
+      "(**999****)"
     ];
     const bad = [
+      "(*)",
+      "(****",
+      "walrus",
       ""
     ];
     good.forEach(s => {
