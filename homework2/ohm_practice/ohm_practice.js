@@ -63,7 +63,7 @@ const isLatinNotForFileFindNoLookAround = ohm.grammar(`I {
   		  | "fil" (("a".."d"|"f".."z"|"A".."Z") letter*)?
 		    | "fi" (("a".."m"|"o".."z"|"A".."Z") letter*)?
         | "fo" (("a".."q"|"s".."z"|"A".."Z") letter*)?
-        | "f" (("a".."n"|"p".."z"|"A".."Z") letter*)?
+        | "f" (("a".."h" | "j".."n"|"p".."z"|"A".."Z") letter*)?
 }`);
 
 const isLatinNotForFileFindWithLookAround = ohm.grammar(`J {
