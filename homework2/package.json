@@ -1,0 +1,14 @@
+{
+  "name": "homework2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "npm": "^5.7.1"
+  }
+}
