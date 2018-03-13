@@ -86,7 +86,10 @@ describe('Ohm tests', () => {
       "14#eD52_4_9#"
     ];
     const bad = [
-      ""
+      "dot",
+      "4ff",
+      "_55",
+      "1_"
     ];
     good.forEach(s => {
       expect(isAda95.match(s).succeeded()).toBeTruthy();
