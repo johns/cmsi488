@@ -11,7 +11,11 @@ const {
   isLatinNotForFileFindWithLookAround
 } = require('./regex_practice.js');
 
+const fs = require('fs');
+const ohm = require('ohm-js');
+
 describe('Regex tests', () => {
+
   test('isCanadianPostalCode', () => {
     const good = [
       "A1A 1A1",
@@ -21,11 +25,11 @@ describe('Regex tests', () => {
       "foo",
       "bar"
     ];
-    good.forEach() => { //something is wrong here
-      expect(isCanadianPostalCode(s)).toBeTruthy(); //something is wrong here
-    };
-    bad.forEach() => { //something is wrong here
-      expect(isCanadianPostalCode(s)).toBeFalsy();//something is wrong here
-    };
+    good.forEach(s => {
+      expect(isCanadianPostalCode.match(s).succeeded()).toBeTruthy();
+    });
+    bad.forEach(s => {
+      expect(isCanadianPostalCode.match(s).succeeded()).toBeFalsy();
+    });
   });
 });
