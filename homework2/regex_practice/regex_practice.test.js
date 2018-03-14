@@ -28,10 +28,10 @@ describe('Regex tests', () => {
       ""
     ];
     good.forEach(s => {
-      expect(isCanadianPostalCode.match(s).succeeded()).toBeTruthy();
+      expect(isCanadianPostalCode(s)).toBeTruthy();
     });
     bad.forEach(s => {
-      expect(isCanadianPostalCode.match(s).succeeded()).toBeFalsy();
+      expect(isCanadianPostalCode(s)).toBeFalsy();
     });
   });
 
@@ -49,10 +49,10 @@ describe('Regex tests', () => {
 
     ];
     good.forEach(s => {
-      expect(isLegalVisa.match(s).succeeded()).toBeTruthy();
+      expect(isLegalVisa(s)).toBeTruthy();
     });
     bad.forEach(s => {
-      expect(isLegalVisa.match(s).succeeded()).toBeFalsy();
+      expect(isLegalVisa(s)).toBeFalsy();
     });
   });
 
@@ -70,10 +70,10 @@ describe('Regex tests', () => {
 
     ];
     good.forEach(s => {
-      expect(isLegalMasterCard.match(s).succeeded()).toBeTruthy();
+      expect(isLegalMasterCard(s)).toBeTruthy();
     });
     bad.forEach(s => {
-      expect(isLegalMasterCard.match(s).succeeded()).toBeFalsy();
+      expect(isLegalMasterCard(s)).toBeFalsy();
     });
   });
 
@@ -90,10 +90,10 @@ describe('Regex tests', () => {
       "1_"
     ];
     good.forEach(s => {
-      expect(isAda95.match(s).succeeded()).toBeTruthy();
+      expect(isAda95(s)).toBeTruthy();
     });
     bad.forEach(s => {
-      expect(isAda95.match(s).succeeded()).toBeFalsy();
+      expect(isAda95(s)).toBeFalsy();
     });
   });
 
@@ -113,10 +113,10 @@ describe('Regex tests', () => {
       "aoO"
     ];
     good.forEach(s => {
-      expect(isLatinNotThreeEndingInOO.match(s).succeeded()).toBeTruthy();
+      expect(isLatinNotThreeEndingInOO(s)).toBeTruthy();
     });
     bad.forEach(s => {
-      expect(isLatinNotThreeEndingInOO.match(s).succeeded()).toBeFalsy();
+      expect(isLatinNotThreeEndingInOO(s)).toBeFalsy();
     });
   });
 
@@ -132,10 +132,10 @@ describe('Regex tests', () => {
       '00000000001'
     ];
     good.forEach(s => {
-      expect(isBinaryDivisibleBy32.match(s).succeeded()).toBeTruthy();
+      expect(isBinaryDivisibleBy32(s)).toBeTruthy();
     });
     bad.forEach(s => {
-      expect(isBinaryDivisibleBy32.match(s).succeeded()).toBeFalsy();
+      expect(isBinaryDivisibleBy32(s)).toBeFalsy();
     });
   });
 
@@ -151,10 +151,10 @@ describe('Regex tests', () => {
       "foooo"
     ];
     good.forEach(s => {
-      expect(isDecimal2Through36.match(s).succeeded()).toBeTruthy();
+      expect(isDecimal2Through36(s)).toBeTruthy();
     });
     bad.forEach(s => {
-      expect(isDecimal2Through36.match(s).succeeded()).toBeFalsy();
+      expect(isDecimal2Through36(s)).toBeFalsy();
     });
   });
 
@@ -171,10 +171,10 @@ describe('Regex tests', () => {
       ""
     ];
     good.forEach(s => {
-      expect(isMLComment.match(s).succeeded()).toBeTruthy();
+      expect(isMLComment(s)).toBeTruthy();
     });
     bad.forEach(s => {
-      expect(isMLComment.match(s).succeeded()).toBeFalsy();
+      expect(isMLComment(s)).toBeFalsy();
     });
   });
 
@@ -194,10 +194,10 @@ describe('Regex tests', () => {
       "find"
     ];
     good.forEach(s => {
-      expect(isLatinNotForFileFindNoLookAround.match(s).succeeded()).toBeTruthy();
+      expect(isLatinNotForFileFindNoLookAround(s)).toBeTruthy();
     });
     bad.forEach(s => {
-      expect(isLatinNotForFileFindNoLookAround.match(s).succeeded()).toBeFalsy();
+      expect(isLatinNotForFileFindNoLookAround(s)).toBeFalsy();
     });
   });
 
@@ -217,10 +217,10 @@ describe('Regex tests', () => {
       "find"
     ];
     good.forEach(s => {
-      expect(isLatinNotForFileFindWithLookAround.match(s).succeeded()).toBeTruthy();
+      expect(isLatinNotForFileFindWithLookAround(s)).toBeTruthy();
     });
     bad.forEach(s => {
-      expect(isLatinNotForFileFindWithLookAround.match(s).succeeded()).toBeFalsy();
+      expect(isLatinNotForFileFindWithLookAround(s)).toBeFalsy();
     });
   });
 

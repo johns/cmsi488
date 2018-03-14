@@ -45,7 +45,7 @@ function isLatinNotForFileFindNoLookAround(s) {
     | find[a-zA-Z]+
     | fo([a-qs-zA-Z][a-zA-Z]*)?
     | for[a-zA-Z]+
-  )?$`.replace(/\s+g/, ''));
+  )?$`.replace(/\s+/g, '')).test(s);
 }
 
 function isLatinNotForFileFindWithLookAround(s) {
