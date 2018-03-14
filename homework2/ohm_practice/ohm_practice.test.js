@@ -11,7 +11,6 @@ const {
   isLatinNotForFileFindWithLookAround
 } = require('./ohm_practice.js');
 
-const ohm = require('ohm-js');
 
 describe('Ohm tests', () => {
 
