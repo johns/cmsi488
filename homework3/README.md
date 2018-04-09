@@ -56,3 +56,9 @@ f();                // line 7
 - Variable scope is whole function, but compiler rejects use of identifier in its own declaration
 
 ### 3. (5 pts) Describe the semantics of private in Ruby and C#. (Hint: they’re quite different.) Write well. You won’t get any points for a poorly written description.
+
+#### a. ```Ruby```
+- A private function may not be called with an explicit receiver, the receiver is implicitly self
+
+#### b. ```C#```
+- A private member of an object is only accessible within the body of the same class
