@@ -50,7 +50,7 @@ f();                // line 7
 - Variable scope is bounded by the function or block it is declared in, but variable is preassigned a nonsensical value before it's declared
 
 #### e. 3, -23482937128
-
+- Variable scope begins at declaration, x is assigned a random value when used in its own declaration
 
 #### f. Error on line 4: x used in its own declaration
 - Variable scope is whole function, but compiler rejects use of identifier in its own declaration
