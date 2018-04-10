@@ -40,24 +40,24 @@ f();                // line 7
 #### a. `3`
 #### `5`
 
-Variable scope begins after it is declared. Nonlocal variables with same name are used until variable is declared locally
+Variable scope begins after it is declared. Nonlocal variables with same name are used until variable is declared locally.
 
 #### b. `undefined NaN`
-Variable scope is bounded by the function or block it is declared in, ```undefined``` at beginning of function/block
+Variable scope is bounded by the function or block it is declared in, ```undefined``` at beginning of function/block.
 
 #### c. `Error on line 3: x is not declared`
-Variable scope is bounded by the function or block it is declared in, but variable can't be accessed until declared
+Variable scope is bounded by the function or block it is declared in, but variable can't be accessed until declared.
 
 #### d. `75354253672`
 #### `75354253674`
-Variable scope is bounded by the function or block it is declared in, but variable is preassigned a nonsensical value before it's declared
+Variable scope is bounded by the function or block it is declared in, but variable is preassigned a nonsensical value before it's declared.
 
 #### e. `3`
 #### `-23482937128`
-
+Variable scope begins at the point of declaration, without waiting for the declaration to be complete. But since the identifier can be used right away, it appears as nonsense when used in its own declaration.
 
 #### f. `Error on line 4: x used in its own declaration`
-Variable scope is whole function, but compiler rejects use of identifier in its own declaration
+Variable scope is whole function, but compiler rejects use of identifier in its own declaration.
 
 ### 3. (5 pts) Describe the semantics of `private` in Ruby and C#. (Hint: they’re quite different.) Write well. You won’t get any points for a poorly written description.
-In Ruby a private function may not be called with an explicit receiver, the receiver is implicitly self. In C# a private member of an object is only accessible within the body of the same class
+In Ruby a private function may not be called with an explicit receiver, the receiver is implicitly self. In C# a private member of an object is only accessible within the body of the same class.
