@@ -48,6 +48,7 @@ Variable scope is bounded by the function or block it is declared in, ```undefin
 #### c. `Error on line 3: x is not declared`
 Variable scope is bounded by the function or block it is declared in, but variable can't be accessed until declared.
 
+<<<<<<< HEAD
 #### d. `75354253672`
 #### `75354253674`
 Variable scope is bounded by the function or block it is declared in, but variable is preassigned a nonsensical value before it's declared.
@@ -55,6 +56,10 @@ Variable scope is bounded by the function or block it is declared in, but variab
 #### e. `3`
 #### `-23482937128`
 Variable scope begins at the point of declaration, without waiting for the declaration to be complete. But since the identifier can be used right away, it appears as nonsense when used in its own declaration.
+=======
+#### e. 3, -23482937128
+- Variable scope begins at declaration, x is assigned a random value when used in its own declaration
+>>>>>>> f07c405e31b0ecd05bd584ebe5d77164b5be7d9c
 
 #### f. `Error on line 4: x used in its own declaration`
 Variable scope is whole function, but compiler rejects use of identifier in its own declaration.
