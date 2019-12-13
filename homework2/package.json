@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "npm": "^6.9.0",
+    "npm": "^6.13.4",
     "ohm-js": "^0.14.0"
   },
   "devDependencies": {
